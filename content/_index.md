@@ -2,6 +2,6 @@
 title: "Willkommen"
 ---
 
-Digitale Services für Winterberg und Umgebung.
+Alltägliche Informationen einfach nutzbar machen.
 
-Alle Services sind kostenlos, quelloffen und ohne Tracking.
+Hier entstehen digitale Helfer für Winterberg und Umgebung - kostenlos, quelloffen und ohne Schnickschnack. Kein Tracking, keine Werbung, keine versteckten Kosten. Einfach nützliche Tools, die funktionieren.

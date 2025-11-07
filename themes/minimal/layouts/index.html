@@ -6,21 +6,23 @@
     {{ .Content }}
 </div>
 
-<section class="services-grid">
-    <div class="service-card">
-        <h3>🗑️ Abfallkalender</h3>
-        <a href="https://abfall.winterberg.services" class="service-url">abfall.winterberg.services</a>
-        <p>Abfuhrtermine für alle Ortsteile. Export als iCalendar, CSV oder JSON mit individuellen Erinnerungen.</p>
-        <p><a href="https://github.com/winterberg-services/abfall-kalender">GitHub</a> · Go + Vanilla JS</p>
-    </div>
+<section class="services-section">
+    <h2>Verfügbare Services</h2>
+    <div class="services-grid">
+        <div class="service-card">
+            <h3>🗑️ Abfallkalender</h3>
+            <a href="https://abfall.winterberg.services" class="service-url">abfall.winterberg.services</a>
+            <p>Abfuhrtermine für alle Ortsteile von Winterberg.</p>
+        </div>
 
-    <!-- Platzhalter für weitere Services -->
-    <!--
-    <div class="service-card">
-        <h3>🚧 Weitere Services</h3>
-        <p>In Planung...</p>
+        <!-- Platzhalter für weitere Services -->
+        <!--
+        <div class="service-card">
+            <h3>🚧 Weitere Services</h3>
+            <p>In Planung...</p>
+        </div>
+        -->
     </div>
-    -->
 </section>
 
 {{ if .Site.RegularPages }}
