@@ -1,0 +1,38 @@
+{{ define "title" }}{{ .Site.Title }} - {{ .Site.Params.description }}{{ end }}
+
+{{ define "main" }}
+<div class="content">
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+</div>
+
+<section class="services-grid">
+    <div class="service-card">
+        <h3>🗑️ Abfallkalender</h3>
+        <a href="https://abfall.winterberg.services" class="service-url">abfall.winterberg.services</a>
+        <p>Abfuhrtermine für alle Ortsteile. Export als iCalendar, CSV oder JSON mit individuellen Erinnerungen.</p>
+        <p><a href="https://github.com/winterberg-services/abfall-kalender">GitHub</a> · Go + Vanilla JS</p>
+    </div>
+
+    <!-- Platzhalter für weitere Services -->
+    <!--
+    <div class="service-card">
+        <h3>🚧 Weitere Services</h3>
+        <p>In Planung...</p>
+    </div>
+    -->
+</section>
+
+{{ if .Site.RegularPages }}
+<section class="blog-list">
+    <h2>Neuigkeiten</h2>
+    {{ range first 3 (where .Site.RegularPages "Section" "neuigkeiten") }}
+    <article class="blog-post">
+        <div class="post-meta">{{ .Date.Format "02.01.2006" }}</div>
+        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        <p>{{ .Summary }}</p>
+    </article>
+    {{ end }}
+</section>
+{{ end }}
+{{ end }}

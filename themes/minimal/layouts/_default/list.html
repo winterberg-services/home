@@ -1,0 +1,18 @@
+{{ define "title" }}{{ .Title }} - {{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+<div class="content">
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+</div>
+
+<section class="blog-list">
+    {{ range .Pages }}
+    <article class="blog-post">
+        <div class="post-meta">{{ .Date.Format "02.01.2006" }}</div>
+        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        <p>{{ .Summary }}</p>
+    </article>
+    {{ end }}
+</section>
+{{ end }}

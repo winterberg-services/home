@@ -1,0 +1,21 @@
+baseURL = 'https://winterberg.services/'
+languageCode = 'de-de'
+title = 'Winterberg Services'
+theme = 'minimal'
+
+[params]
+  description = 'Digitale Services für Winterberg'
+
+[menu]
+  [[menu.main]]
+    name = 'Home'
+    url = '/'
+    weight = 1
+  [[menu.main]]
+    name = 'Services'
+    url = '/services/'
+    weight = 2
+  [[menu.main]]
+    name = 'Neuigkeiten'
+    url = '/neuigkeiten/'
+    weight = 3

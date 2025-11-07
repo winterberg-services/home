@@ -1,0 +1,26 @@
+# Winterberg Services - Restrictive robots.txt
+
+# Allow only good bots
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: DuckDuckBot
+Allow: /
+
+# Block AI scrapers
+User-agent: GPTBot
+User-agent: ChatGPT-User
+User-agent: CCBot
+User-agent: anthropic-ai
+User-agent: Claude-Web
+User-agent: Google-Extended
+User-agent: FacebookBot
+User-agent: Bytespider
+User-agent: Diffbot
+Disallow: /
+
+# Block everything else by default
+User-agent: *
+Disallow: /
+
+# Sitemap
+Sitemap: https://winterberg.services/sitemap.xml
