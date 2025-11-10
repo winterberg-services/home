@@ -175,9 +175,11 @@ nav a {
   transition: border-color 0.2s ease;
 }
 
+nav a:hover,
 nav a.active,
 nav a[aria-current="page"] {
   border-bottom-color: var(--accent);
+  text-decoration: none;
 }
 
 .theme-toggle {
