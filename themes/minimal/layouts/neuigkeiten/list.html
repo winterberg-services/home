@@ -1,0 +1,220 @@
+{{ define "title" }}{{ .Title }} - {{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+<div class="content">
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+</div>
+
+<div class="news-filters">
+    <div class="search-box">
+        <input type="text" id="search-input" placeholder="Titel oder Inhalt durchsuchen..." />
+    </div>
+
+    <div class="filter-controls">
+        <div class="filter-tags" id="filter-tags">
+            <button class="filter-chip active" data-type="year" data-value="">Alle Jahre</button>
+        </div>
+        <button class="clear-filters" id="clear-filters">Filter zurücksetzen</button>
+    </div>
+
+    <div class="filter-controls">
+        <div class="filter-tags" id="filter-tags-themes">
+            <button class="filter-chip active" data-type="tag" data-value="">Alle Themen</button>
+        </div>
+    </div>
+
+    <div class="results-count">
+        <span id="results-text">Zeige alle Neuigkeiten</span>
+    </div>
+</div>
+
+<section class="blog-list" id="news-list">
+    {{ range .Pages.ByDate.Reverse }}
+    <article class="blog-post"
+             data-title="{{ .Title | lower }}"
+             data-summary="{{ .Summary | plainify | lower }}"
+             data-date="{{ .Date.Format "2006-01-02" }}"
+             data-year="{{ .Date.Format "2006" }}"
+             data-tags="{{ delimit .Params.tags "," }}">
+        <div class="post-meta">{{ .Date.Format "02.01.2006" }}</div>
+        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        <p>{{ .Summary }}</p>
+        <a href="{{ .Permalink }}" class="read-more">Weiterlesen →</a>
+        {{ if .Params.tags }}
+        <div class="post-tags">
+            {{ range .Params.tags }}
+            <span class="tag">{{ . }}</span>
+            {{ end }}
+        </div>
+        {{ end }}
+    </article>
+    {{ end }}
+</section>
+
+<p class="no-results" id="no-results" style="display: none;">
+    Keine Neuigkeiten gefunden.
+</p>
+
+<script>
+(function() {
+    const searchInput = document.getElementById('search-input');
+    const filterTags = document.getElementById('filter-tags');
+    const clearBtn = document.getElementById('clear-filters');
+    const resultsText = document.getElementById('results-text');
+    const posts = document.querySelectorAll('.blog-post');
+    const noResults = document.getElementById('no-results');
+    const totalPosts = posts.length;
+
+    let activeFilters = {
+        search: '',
+        years: new Set(),
+        tags: new Set()
+    };
+
+    // Collect unique years and tags
+    const years = new Set();
+    const tags = new Set();
+
+    posts.forEach(post => {
+        years.add(post.dataset.year);
+        const postTags = post.dataset.tags.split(',').filter(t => t.trim());
+        postTags.forEach(tag => tags.add(tag.trim()));
+    });
+
+    // Create filter chips
+    const filterTagsThemes = document.getElementById('filter-tags-themes');
+
+    const allYearsBtn = document.querySelector('[data-type="year"][data-value=""]');
+    const allThemesBtn = document.querySelector('[data-type="tag"][data-value=""]');
+
+    Array.from(years).sort().reverse().forEach(year => {
+        const chip = document.createElement('button');
+        chip.className = 'filter-chip';
+        chip.dataset.type = 'year';
+        chip.dataset.value = year;
+        chip.textContent = year;
+        chip.addEventListener('click', () => toggleFilter('year', year, chip));
+        filterTags.appendChild(chip);
+    });
+
+    Array.from(tags).sort().forEach(tag => {
+        const chip = document.createElement('button');
+        chip.className = 'filter-chip';
+        chip.dataset.type = 'tag';
+        chip.dataset.value = tag;
+        chip.textContent = tag;
+        chip.addEventListener('click', () => toggleFilter('tag', tag, chip));
+        filterTagsThemes.appendChild(chip);
+    });
+
+    // Add event listeners to "Alle" buttons
+    allYearsBtn.addEventListener('click', () => toggleFilter('year', '', allYearsBtn));
+    allThemesBtn.addEventListener('click', () => toggleFilter('tag', '', allThemesBtn));
+
+    function toggleFilter(type, value, chip) {
+        if (value === '') {
+            // "Alle" button - clear that type
+            if (type === 'year') {
+                activeFilters.years.clear();
+                document.querySelectorAll('[data-type="year"]').forEach(c => c.classList.remove('active'));
+            } else {
+                activeFilters.tags.clear();
+                document.querySelectorAll('[data-type="tag"]').forEach(c => c.classList.remove('active'));
+            }
+            chip.classList.add('active');
+        } else {
+            // Specific filter
+            const container = type === 'year' ? activeFilters.years : activeFilters.tags;
+            const allButton = document.querySelector(`[data-type="${type}"][data-value=""]`);
+            const allItems = type === 'year' ? years : tags;
+
+            if (container.has(value)) {
+                container.delete(value);
+                chip.classList.remove('active');
+                if (container.size === 0) {
+                    allButton.classList.add('active');
+                }
+            } else {
+                container.add(value);
+                chip.classList.add('active');
+                allButton.classList.remove('active');
+
+                // Smart "Alle" - if all items are now selected, switch to "Alle"
+                if (container.size === allItems.size) {
+                    container.clear();
+                    document.querySelectorAll(`[data-type="${type}"]`).forEach(c => {
+                        if (c.dataset.value === '') {
+                            c.classList.add('active');
+                        } else {
+                            c.classList.remove('active');
+                        }
+                    });
+                }
+            }
+        }
+        filterPosts();
+    }
+
+    function filterPosts() {
+        const searchTerm = searchInput.value.toLowerCase();
+        activeFilters.search = searchTerm;
+        let visibleCount = 0;
+
+        posts.forEach(post => {
+            const title = post.dataset.title;
+            const summary = post.dataset.summary;
+            const year = post.dataset.year;
+            const postTags = post.dataset.tags.split(',').map(t => t.trim()).filter(t => t);
+
+            const matchesSearch = !searchTerm ||
+                title.includes(searchTerm) ||
+                summary.includes(searchTerm);
+
+            const matchesYear = activeFilters.years.size === 0 || activeFilters.years.has(year);
+            const matchesTag = activeFilters.tags.size === 0 ||
+                postTags.some(tag => activeFilters.tags.has(tag));
+
+            if (matchesSearch && matchesYear && matchesTag) {
+                post.style.display = '';
+                visibleCount++;
+            } else {
+                post.style.display = 'none';
+            }
+        });
+
+        noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        updateResultsText(visibleCount);
+    }
+
+    function updateResultsText(visibleCount) {
+        if (visibleCount === totalPosts) {
+            resultsText.textContent = `Zeige alle ${totalPosts} Neuigkeiten`;
+        } else {
+            resultsText.textContent = `Zeige ${visibleCount} von ${totalPosts} Neuigkeiten`;
+        }
+    }
+
+    function clearAllFilters() {
+        activeFilters.years.clear();
+        activeFilters.tags.clear();
+        searchInput.value = '';
+
+        document.querySelectorAll('.filter-chip').forEach(chip => {
+            chip.classList.remove('active');
+            if (chip.dataset.value === '') {
+                chip.classList.add('active');
+            }
+        });
+
+        filterPosts();
+    }
+
+    searchInput.addEventListener('input', filterPosts);
+    clearBtn.addEventListener('click', clearAllFilters);
+
+    // Initial count
+    updateResultsText(totalPosts);
+})();
+</script>
+{{ end }}

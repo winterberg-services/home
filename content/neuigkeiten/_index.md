@@ -2,4 +2,4 @@
 title: "Neuigkeiten"
 ---
 
-Updates zu den Services.
+Was gibt's Neues? Hier finden Sie Updates zu allen Services.

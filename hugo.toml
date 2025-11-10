@@ -1,10 +1,13 @@
 baseURL = 'https://winterberg.services/'
 languageCode = 'de-de'
-title = 'Winterberg Services'
+title = 'winterberg.services'
 theme = 'minimal'
 
 [params]
   description = 'Digitale Services für Winterberg'
+
+[taxonomies]
+  tag = 'tags'
 
 [menu]
   [[menu.main]]

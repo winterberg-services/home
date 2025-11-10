@@ -4,25 +4,17 @@ title: "Impressum"
 
 ## Angaben gemäß § 5 TMG
 
-blue cat GmbH
-Remmesweise 18
+Bastian Klante
+Molbeckeweg 18
 59955 Winterberg
-
-Geschäftsführer: Bastian Klante
 
 ## Kontakt
 
-E-Mail: info [at] winterberg.services
+E-Mail: winterberg.services [at] gmail.com
 
 ## Haftungsausschluss
 
-### Haftung für Inhalte
-
-Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.
-
-### Haftung für Links
-
-Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen.
+Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden.
 
 ## Datenschutz
 

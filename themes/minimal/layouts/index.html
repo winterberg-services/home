@@ -7,7 +7,7 @@
 </div>
 
 <section class="services-section">
-    <h2>Verfügbare Services</h2>
+    <h2>Top-Services</h2>
     <div class="services-grid">
         <div class="service-card">
             <h3>🗑️ Abfallkalender</h3>
@@ -23,7 +23,10 @@
         </div>
         -->
     </div>
+    <p class="services-link">Alle Services finden Sie auf der <a href="/services/">Services-Seite</a>.</p>
 </section>
+
+<hr class="section-divider">
 
 {{ if .Site.RegularPages }}
 <section class="blog-list">
@@ -32,9 +35,11 @@
     <article class="blog-post">
         <div class="post-meta">{{ .Date.Format "02.01.2006" }}</div>
         <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-        <p>{{ .Summary }}</p>
+        <p>{{ .Params.summary | default .Summary }}</p>
+        <a href="{{ .Permalink }}" class="read-more">Weiterlesen →</a>
     </article>
     {{ end }}
+    <p class="news-link"><a href="/neuigkeiten/">Mehr Neuigkeiten lesen →</a></p>
 </section>
 {{ end }}
 {{ end }}

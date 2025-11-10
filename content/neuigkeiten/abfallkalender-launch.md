@@ -1,25 +1,26 @@
 ---
-title: "Abfallkalender Service verfügbar"
-date: 2025-12-01
+title: "Abfallkalender für Winterberg"
+date: 2025-11-10
+tags: ["Service: Abfallkalender", "Winterberg Services"]
+summary: "Der Abfallkalender für alle Winterberger Ortsteile ist verfügbar."
 ---
 
-Der erste Service ist live: Der Abfallkalender für alle Ortsteile von Winterberg.
+Der Abfallkalender für alle Winterberger Ortsteile ist verfügbar.
 
 ---
 
-Jeden Monat die gleiche Frage: Wann kommt welche Tonne? Der offizielle Kalender ist ein PDF - schwer zu durchsuchen, unmöglich zu abonnieren.
+Der offizielle Abfallkalender wird von der Stadt lediglich als PDF veröffentlicht.
+Unter [abfall.winterberg.services](https://abfall.winterberg.services) lässt sich der Kalender nun auch digital abonnieren - die Termine erscheinen dann automatisch im eigenen Kalender.
+Einmal eingerichtet, nie wieder nachschauen müssen.
 
-Der Abfallkalender löst das Problem: Alle Termine für alle 14 Ortsteile, exportierbar als iCalendar für iPhone, Android und Outlook. Einmal abonniert, erscheinen die Termine automatisch im eigenen Kalender. Mit Erinnerungen, falls gewünscht.
+Wer den Kalender abonniert, bekommt auch unterjährige Änderungen automatisch.
 
-## Features
+<!--more-->
 
-- Alle 14 Ortsteile von Winterberg
-- 6 verschiedene Abfalltypen
-- Export als iCalendar (.ics) für iPhone, Android, Outlook
-- Export als CSV und JSON
-- Individuelle Erinnerungen (2 Tage, 1 Tag, am selben Tag)
-- Filterfunktion nach Abfalltyp
+Das funktioniert auf allen Geräten: iPhone, Android, PC, Mac.
 
-Die Daten stammen aus dem offiziellen PDF-Kalender der Stadt. Der Quellcode ist auf [GitHub](https://github.com/winterberg-services/abfall-kalender) verfügbar.
+Wer möchte, kann die Termine auch als iCalendar-Datei herunterladen und mit individuellen Erinnerungen versehen.
 
-Verfügbar unter [abfall.winterberg.services](https://abfall.winterberg.services)
+Alle 14 Ortsteile, alle Abfalltypen. Die Daten stammen aus dem offiziellen Kalender der Stadt.
+
+Der Quellcode ist auf [GitHub](https://github.com/winterberg-services/abfall-kalender) verfügbar.

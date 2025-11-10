@@ -1,12 +1,16 @@
 ---
-title: "Abfallkalender 2026 verfügbar"
+title: "Abfalltermine 2026 hinzugefügt"
 date: 2026-01-01
+tags: ["Service: Abfallkalender"]
+summary: "Die Abfuhrtermine für 2026 sind jetzt verfügbar."
 ---
 
 Die Abfuhrtermine für 2026 sind jetzt verfügbar.
 
 ---
 
-Das neue Jahr startet mit aktualisierten Daten: Alle Abfuhrtermine für 2026 sind im Kalender eingetragen und können wie gewohnt als iCalendar, CSV oder JSON exportiert werden.
+Alle Abfuhrtermine für 2026 sind eingetragen. Wer den Kalender abonniert hat, bekommt die neuen Termine automatisch. Wer die Termine herunterlädt, findet das Jahr 2026 jetzt ebenfalls.
 
-Wer den Kalender bereits abonniert hat, bekommt die neuen Termine automatisch. Alle anderen finden den Kalender unter [abfall.winterberg.services](https://abfall.winterberg.services).
+<!--more-->
+
+Verfügbar unter [abfall.winterberg.services](https://abfall.winterberg.services).
