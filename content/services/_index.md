@@ -6,7 +6,7 @@ title: "Services"
 
 [abfall.winterberg.services](https://abfall.winterberg.services)
 
-- Abfuhrtermine für alle 14 Ortsteile von Winterberg. 
+- Abfuhrtermine für 11 Ortsteile von Winterberg. 
 
 - Abonnieren des Kalenders für dauerhafte und automatische Updates. 
 

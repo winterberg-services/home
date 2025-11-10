@@ -5,7 +5,9 @@ title: "Impressum"
 ## Angaben gemäß § 5 TMG
 
 Bastian Klante
+
 Molbeckeweg 18
+
 59955 Winterberg
 
 ## Kontakt
@@ -18,4 +20,12 @@ Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für die Rich
 
 ## Datenschutz
 
-Diese Website verwendet keine Cookies und erhebt keine personenbezogenen Daten. Es findet kein Tracking statt.
+Diese Website ist bewusst minimalistisch gehalten und respektiert Ihre Privatsphäre:
+
+- Keine Cookies
+- Keine Tracking-Tools oder Analyse-Software
+- Keine externen Dienste (z.B. Google Analytics, Google Fonts, etc.)
+- Keine Erhebung personenbezogener Daten
+- Alle Ressourcen werden von unserem Server geladen
+
+Bei Kontaktaufnahme per E-Mail werden nur die von Ihnen übermittelten Daten zur Bearbeitung Ihrer Anfrage verwendet.
