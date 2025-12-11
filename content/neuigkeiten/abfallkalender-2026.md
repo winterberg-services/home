@@ -1,15 +1,17 @@
 ---
 title: "Abfalltermine 2026 hinzugefügt"
-date: 2026-01-01
+date: 2025-12-11
 tags: ["Service: Abfallkalender"]
-summary: "Die Abfuhrtermine für 2026 sind jetzt verfügbar."
+summary: "Der Abfallkalender ist jetzt für alle 14 Ortsteile vollständig - für 2025 und 2026."
 ---
 
-Die Abfuhrtermine für 2026 sind jetzt verfügbar.
+Der Abfallkalender 2026 ist jetzt für alle 14 Ortsteile vollständig.
 
 ---
 
-Alle Abfuhrtermine für 2026 sind eingetragen. Wer den Kalender abonniert hat, bekommt die neuen Termine automatisch. Wer die Termine herunterlädt, findet das Jahr 2026 jetzt ebenfalls.
+Die Abfuhrtermine für 2026 sind jetzt für alle Ortsteile verfügbar. Außerdem wurden die 2025er Termine nachgepflegt.
+
+Wer den Kalender abonniert hat, bekommt die neuen Termine automatisch. Wer die Termine herunterlädt, findet jetzt beide Jahre vollständig.
 
 <!--more-->
 
