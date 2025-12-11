@@ -4,7 +4,7 @@ title = 'winterberg.services'
 theme = 'minimal'
 
 [params]
-  description = 'Digitale Services für Winterberg'
+  description = 'Digitale Services für Winterberg - Abfallkalender und mehr'
 
 [taxonomies]
   tag = 'tags'
